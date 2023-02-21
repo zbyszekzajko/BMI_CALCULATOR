@@ -160,3 +160,4 @@ const bmiValue = () => {
 // });
 
 
+console.log(avr);
