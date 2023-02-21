@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Document</title>
+    <style>
+
+    </style>
+    <link href="./BMI.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <h2> Kalkulator BMI</h2>
+
+
+    <div class="flex-kontener">
+
+
+        <div class="dane">
+            <fieldset>
+                <legend>Parametry</legend>
+                <form id="form">
+                    <label for="weight">Waga:</label><br>
+                    <input type="text" id="weight" name="weight"><br>
+                    <label for="height">Wzrost:</label><br>
+                    <input type="text" id="height" name="height"><br><br>
+                    <input type="button" id = "button" onclick="bmiValue()" value="Zatwierdz">
+                </form>
+
+            </fieldset>
+        </div>
+
+
+        <div class="wynik">
+            <fieldset>
+                <legend>Wynik</legend>
+                <div class="result">
+                    <h3 id="displayBmi">Twój wynik BMI: </h3>
+                    <h5 id="displayWeight">Twoja waga: </h5>
+                    <h5 id="displayHeight">Twój wzrost: </h5>
+                    <h5 id="displayHLbmi" style="color:rgb(165, 8, 8);"></h5>
+
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="historia">
+            <fieldset>
+                <legend>Historia:</legend>
+
+                <ol id="olHistory">
+
+
+                </ol>
+
+                <h5 id="avr"> </h5>
+
+                <input type="button" onclick="clearStorage()" value="Wyczyść historię">
+
+
+
+            </fieldset>
+        </div>
+
+    </div>
+
+    <script src="./BMI.js"></script>
+
+</body>
+
+</html>
