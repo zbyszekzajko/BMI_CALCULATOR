@@ -159,5 +159,5 @@ const bmiValue = () => {
 // 	sum += Number(getInfo.BMI);
 // });
 
-
 console.log(avr);
+console.log(sum);
