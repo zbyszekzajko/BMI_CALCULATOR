@@ -155,5 +155,4 @@ const bmiValue = () => {
 	clearInput();
 };
 
-console.log(avr);
-console.log(sum);
+
