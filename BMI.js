@@ -50,7 +50,7 @@ const returnDate = () => {
 const liList = (a, b) => {
 	const liItem = document.createElement("li");
 	document.getElementById("olHistory").appendChild(liItem);
-	liItem.id = b;
+	// liItem.id = b;
 	const link = document.createElement("a");
 	link.setAttribute("href", " #");
 	liItem.appendChild(link).innerHTML = ` Pomiar z ${a}`;
@@ -90,11 +90,13 @@ const createObject = (a, b, c, d) => {
 
 let sum = 0;
 
-for (let i = 0; i < localStorage.length; i++) {
-	let getInfo = JSON.parse(window.localStorage.getItem(i));
-	liList(getInfo.data, i);
+let countList = 0;
+Object.keys(localStorage).forEach(key => {
+	let getInfo = JSON.parse(window.localStorage.getItem(countList));
+	liList(getInfo.data, countList);
 	sum += Number(getInfo.BMI);
-}
+	countList++;
+});
 
 let inputWeight = document
 	.getElementById("weight")
@@ -152,12 +154,6 @@ const bmiValue = () => {
 		: HeightDisplay("Podałeś zły wzrost!");
 	clearInput();
 };
-
-// Object.keys(localStorage).forEach(key => {
-// 	let getInfo = JSON.parse(window.localStorage.getItem(key));
-// 	liList(getInfo.data, key);
-// 	sum += Number(getInfo.BMI);
-// });
 
 console.log(avr);
 console.log(sum);
