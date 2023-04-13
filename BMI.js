@@ -90,13 +90,18 @@ const createObject = (a, b, c, d) => {
 
 let sum = 0;
 
-let countList = 0;
-Object.keys(localStorage).forEach(key => {
-	let getInfo = JSON.parse(window.localStorage.getItem(countList));
-	liList(getInfo.data, countList);
+for (let i = 0; i < localStorage.length; i++) {
+	let getInfo = JSON.parse(window.localStorage.getItem(i));
+	liList(getInfo.data, i);
 	sum += Number(getInfo.BMI);
-	countList++;
-});
+}
+
+// Object.keys(localStorage).forEach(function (key) {
+// 	console.log(key);
+// 	let getInfo = JSON.parse(window.localStorage.getItem(key));
+// 	liList(getInfo.data, key);
+// 	sum += Number(getInfo.BMI);
+// });
 
 let inputWeight = document
 	.getElementById("weight")
@@ -154,5 +159,3 @@ const bmiValue = () => {
 		: HeightDisplay("Podałeś zły wzrost!");
 	clearInput();
 };
-
-
